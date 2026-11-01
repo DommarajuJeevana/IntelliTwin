@@ -1,0 +1,19 @@
+fastapi>=0.115
+uvicorn[standard]>=0.30
+motor>=3.6
+pydantic[email]>=2.12   # 2.12+ ships Python 3.14 wheels
+pydantic-settings>=2.3
+python-jose[cryptography]>=3.3
+bcrypt>=5.0   # 5.0+ ships Python 3.14 wheels
+openai>=1.50        # used for Ollama (llama3.2) via its OpenAI-compatible API
+httpx>=0.27
+numpy>=2.3.2   # 2.3.2+ ships Python 3.14 wheels
+# Optional: only needed if LLM_PROVIDER=anthropic
+# anthropic>=0.40
+# Optional: only needed to run the standalone Echo MCP server (app/mcp/echo_server.py)
+# mcp>=1.2,<2   # app/mcp/echo_server.py uses the 1.x decorator API; 2.x is not compatible
+tzdata>=2024.1   # IANA timezones (needed on Windows)
+
+# Added for the audit work
+bleach>=6.0          # rich-text sanitisation (notes/documents)
+# Dev/test only: pytest, pytest-asyncio, mongomock-motor  (run: python -m pytest -q)
